@@ -9,11 +9,11 @@ class neural_network:
         for _ in range(num):
             output = self.think(inputs)
             error = outputs - output
-            adjustment = 0.01 * dot(inputs.T, error)
+            adjustment = 0.01 * dot(inputs.T, error) # this makes a Tensor... i think
             self.weights += adjustment
 
     def think(self, inputs):
-        return (dot(inputs, self.weights))
+        return (dot(inputs, self.weights)) # dot product adjacency matrix
 
 
 
